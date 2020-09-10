@@ -1,1 +1,1 @@
-# mobile-p2p-test
+App for testing P2P replication with URLEndpointListener

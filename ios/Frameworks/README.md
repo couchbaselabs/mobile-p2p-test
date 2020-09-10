@@ -1,0 +1,1 @@
+Copy CouchbaseLiteSwift.framework here.
