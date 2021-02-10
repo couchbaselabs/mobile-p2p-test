@@ -51,11 +51,17 @@ class DatabaseViewController: UIViewController {
     }
     
     @IBAction func resetAction(_ sender: Any) {
+        if let token = itemDeviceCountsQueryToken {
+            token.remove()
+        }
+        
         Listener.shared.stop()
         Sync.shared.stop()
         DB.shared.reset()
+        
+        self.items = []
+        self.tableView.reloadData()
     }
-    
 }
 
 extension DatabaseViewController: UITableViewDelegate, UITableViewDataSource {
