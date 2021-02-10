@@ -66,6 +66,13 @@ class ClientViewController: ItemsViewController {
                 self.startReplicator(url: url)
             }
         }
+        
+        if let url = Sync.shared.url {
+            dialog.textFieldConfig = { textField in
+                textField.text = url.absoluteString
+            }
+        }
+        
         dialog.show(controller: self)
     }
     

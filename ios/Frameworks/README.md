@@ -1,1 +1,1 @@
-Copy CouchbaseLiteSwift.framework here.
+Copy CouchbaseLiteSwift.xcframework here.

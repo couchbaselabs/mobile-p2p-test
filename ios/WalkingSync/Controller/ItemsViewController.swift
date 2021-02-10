@@ -51,16 +51,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewWillDisappear(animated)
     }
     
-    func getItemCounts() {
-        if itemCountsQueryToken == nil {
-            itemCountsQueryToken = DB.shared.getItemCounts(listener: { (counts) in
-                DispatchQueue.main.async {
-                    self.itemCounts = counts
-                    self.tableView.reloadData()
-                }
-            })
-        }
-    }
+    // MARK: UITableView
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -104,7 +95,52 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         let name = Data.items[indexPath.row]["name"] as! String
-        DB.shared.addItem(name: name)
+        addItem(name: name)
     }
     
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let name = Data.items[indexPath.row]["name"] as! String
+        
+        let add25 = UIContextualAction.init(style: .normal, title: "+25") { (action, view, completion) in
+            self.addItem(name: name, number: 25)
+            completion(true)
+        }
+        add25.backgroundColor = .blue
+        
+        let add50 = UIContextualAction.init(style: .normal, title: "+50") { (action, view, completion) in
+            self.addItem(name: name, number: 50)
+            completion(true)
+        }
+        add50.backgroundColor = .purple
+        
+        let add100 = UIContextualAction.init(style: .normal, title: "+100") { (action, view, completion) in
+            self.addItem(name: name, number: 100)
+            completion(true)
+        }
+        add100.backgroundColor = .orange
+        
+        let config = UISwipeActionsConfiguration(actions: [add25, add50, add100])
+        config.performsFirstActionWithFullSwipe = false
+        return config
+    }
+    
+    // MARK: Utils
+    
+    func getItemCounts() {
+        if itemCountsQueryToken == nil {
+            itemCountsQueryToken = DB.shared.getItemCounts(listener: { (counts) in
+                DispatchQueue.main.async {
+                    self.itemCounts = counts
+                    self.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
+    func addItem(name: String, number: UInt = 1) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            DB.shared.addItem(name: name, number: number)
+        }
+    }
 }

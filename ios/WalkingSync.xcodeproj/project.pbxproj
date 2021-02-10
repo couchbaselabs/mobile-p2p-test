@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		939AA4C924FDC38A0058F48F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AA4C824FDC38A0058F48F /* Settings.swift */; };
 		939AA4CB24FDC9300058F48F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AA4CA24FDC9300058F48F /* SettingsViewController.swift */; };
 		939AA4CF24FEE6A60058F48F /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939AA4CE24FEE6A60058F48F /* ItemsViewController.swift */; };
+		93E82BD325D30A680047A19C /* CouchbaseLiteSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E82BD225D30A680047A19C /* CouchbaseLiteSwift.xcframework */; };
+		93E82BD425D30A680047A19C /* CouchbaseLiteSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93E82BD225D30A680047A19C /* CouchbaseLiteSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93F3B7AD24DB49420078F21D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B7AC24DB49420078F21D /* AppDelegate.swift */; };
 		93F3B7AF24DB49420078F21D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B7AE24DB49420078F21D /* SceneDelegate.swift */; };
 		93F3B7B124DB49420078F21D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B7B024DB49420078F21D /* HomeViewController.swift */; };
@@ -25,8 +27,6 @@
 		93F3B7B924DB49440078F21D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93F3B7B724DB49440078F21D /* LaunchScreen.storyboard */; };
 		93F3B7C324DB66020078F21D /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B7C224DB66020078F21D /* ServerViewController.swift */; };
 		93F3B7C524DB6BAC0078F21D /* UIImage+QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B7C424DB6BAC0078F21D /* UIImage+QRCode.swift */; };
-		93F3B7C824DB78800078F21D /* CouchbaseLiteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F3B7C724DB78800078F21D /* CouchbaseLiteSwift.framework */; };
-		93F3B7C924DB78800078F21D /* CouchbaseLiteSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93F3B7C724DB78800078F21D /* CouchbaseLiteSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93F3B7CC24DB7A7D0078F21D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F3B7CB24DB7A7D0078F21D /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				93F3B7C924DB78800078F21D /* CouchbaseLiteSwift.framework in Embed Frameworks */,
+				93E82BD425D30A680047A19C /* CouchbaseLiteSwift.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +55,7 @@
 		939AA4C824FDC38A0058F48F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		939AA4CA24FDC9300058F48F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		939AA4CE24FEE6A60058F48F /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
+		93E82BD225D30A680047A19C /* CouchbaseLiteSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CouchbaseLiteSwift.xcframework; path = Frameworks/CouchbaseLiteSwift.xcframework; sourceTree = "<group>"; };
 		93F3B7A924DB49420078F21D /* WalkingSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalkingSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F3B7AC24DB49420078F21D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F3B7AE24DB49420078F21D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		93F3B7BA24DB49440078F21D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93F3B7C224DB66020078F21D /* ServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		93F3B7C424DB6BAC0078F21D /* UIImage+QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+QRCode.swift"; sourceTree = "<group>"; };
-		93F3B7C724DB78800078F21D /* CouchbaseLiteSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLiteSwift.framework; path = Frameworks/CouchbaseLiteSwift.framework; sourceTree = "<group>"; };
 		93F3B7CB24DB7A7D0078F21D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93F3B7C824DB78800078F21D /* CouchbaseLiteSwift.framework in Frameworks */,
+				93E82BD325D30A680047A19C /* CouchbaseLiteSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +152,7 @@
 		93F3B7C624DB78800078F21D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				93F3B7C724DB78800078F21D /* CouchbaseLiteSwift.framework */,
+				93E82BD225D30A680047A19C /* CouchbaseLiteSwift.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

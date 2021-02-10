@@ -30,7 +30,13 @@ class DB {
     
     let queryQueue = DispatchQueue(label: "QueryQueue")
     
+    let logEnabled = true
+    
     private init() {
+        if (logEnabled) {
+            Database.log.console.level = .debug
+        }
+        
         database = try! Database.init(name: "db")
     }
     
@@ -59,11 +65,15 @@ class DB {
         query = nil
     }
     
-    func addItem(name: String) {
-        let doc = MutableDocument()
-        doc.setString(name, forKey: "name")
-        doc.setString(Device.settings.deviceName, forKey: "deviceName")
-        try! database.saveDocument(doc)
+    func addItem(name: String, number: UInt = 1) {
+        try! database.inBatch {
+            for _ in 1...number {
+                let doc = MutableDocument()
+                doc.setString(name, forKey: "name")
+                doc.setString(Device.settings.deviceName, forKey: "deviceName")
+                try! database.saveDocument(doc)
+            }
+        }
     }
     
     func getItemCounts(listener: @escaping ([String: ItemCount]) -> Void) -> QueryToken? {
